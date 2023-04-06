@@ -24,8 +24,6 @@ This project is done for the completion of Udacity Data Engineer Nanodegree prog
 The data to be collected will include currencies, gainers, losers and most-active stocks, historical data of stocks and time-range data of the currencies. I will also get summary of each stock which will contain information such as country, phone, sector, earnings, and financial chart. The  currencies data will contain intervals of 1min, 5min, 1day and 1week and range of 5d, 1mo, 6mo and 1yr respectively. The following will detail how the schema to store the data will be designed for easy access and retrieval of the data. 
 
 ---
-
-*** 
    Discuss how the data will be stored.
 
 There will be 10 currencies and 30 stocks. The stocks will be divided into gainers, losers and most-actives. The goal is to collect historical data of the stocks which will include 1 year of records such as the high and low price of the stock, and time of the data. I will also collect the summary of the stocks which will include summaryProfile and earnings. To begin, I will get the currencies data with the four ranges using the endpoint 'market/get-spark'. Then I will check the gainers, losers and most-active stocks in GB market region using the endpoint "market/v2/get-movers". Using the symbols collected, it will be passed to the endpoint "stock/v3/get-historical-data"  to get the historical data of the stocks. It will also be passed to "stock/v2/get-summary" to get summary and eraning of the stocks. To design the schema, I will consider a number of things. 
